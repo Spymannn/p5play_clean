@@ -1,0 +1,26 @@
+{
+  "name": "p5play_clean",
+  "version": "1.0.0",
+  "description": "",
+  "main": "animation_sprite_sheet.js",
+  "directories": {
+    "lib": "lib"
+  },
+  "scripts": {
+    "start": "serve ./",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@gitlab.com/Spymannn/p5play_clean.git"
+  },
+  "author": "Spyman",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://gitlab.com/Spymannn/p5play_clean/issues"
+  },
+  "homepage": "https://gitlab.com/Spymannn/p5play_clean#README",
+  "dependencies": {
+    "serve": "^6.2.0"
+  }
+}
