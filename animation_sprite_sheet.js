@@ -1,56 +1,44 @@
-//Creating animations from sprite sheets
-// var sprite_sheet_image;
-// var sprite_sheet;
-// var explode_animation;
-
 let introImg;
 let introTimeout = 200;
 let isIntro = true;
 let introSprite;
+let introGroup;
 
 function preload() {
-  // specify width and height of each frame and number of frames
-  // sprite_sheet = loadSpriteSheet('assets/explode_sprite_sheet.png', 171, 158, 11);
-  // explode_animation = loadAnimation(sprite_sheet);
-
-  // load the full sprite sheet for example reference only
-  // sprite_sheet_image = loadImage('assets/explode_sprite_sheet.png');
-  introImg = loadImage('assets/spyman-a-week-a-game.png');
+  loadIntro();
 }
 
 function setup() {
-  createCanvas(800, 400);
-  background(255);
+  createCanvas(800, 800);
 }
 
 function draw() {
-  if (frameCount%introTimeout === 0) {
-    console.log('false : ', isIntro);
-    isIntro = false;
-  }
-
   if (isIntro) {
     intro();
   } else {
-    // introSprite.
     launchGame();
   }
-
-  // clear();
-
-  // animate the sprite sheet
-  // animation(explode_animation, 100, 130);
-
-  // show full sheet for example reference
-  // image(sprite_sheet_image, 250, 40, 500, 154);
 }
 
+// loading functions
+function loadIntro() {
+  introImg = loadImage('assets/spyman-a-week-a-game.png');
+  introGroup = new Group();
+
+}
+
+// draw functions
 function launchGame() {
-  removeSprite(introSprite);//.remove();
 }
 
 function intro() {
-  introSprite = createSprite(0, 0);
+  introSprite = createSprite(width/2, height/2);
 	introSprite.addImage(introImg);
-  drawSprites(introSprite);
+  introGroup.add(introSprite);
+  drawSprites(introGroup);
+  if (frameCount%introTimeout === 0) {
+    isIntro = false;
+    clear();
+    background(0);
+  }
 }
